@@ -188,6 +188,143 @@
     }
     </script>
     
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://frescopa.aem-screens.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Coffee Products",
+          "item": "https://frescopa.aem-screens.net/products.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Subscriptions",
+          "item": "https://frescopa.aem-screens.net/index.html#subscription"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Brewing Guides",
+          "item": "https://frescopa.aem-screens.net/brewing-guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "About Us",
+          "item": "https://frescopa.aem-screens.net/about.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Contact",
+          "item": "https://frescopa.aem-screens.net/contact.html"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- ItemList Schema for Coffee Products -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Premium Coffee Collection",
+      "description": "Featured premium coffee beans from around the world",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "@id": "https://frescopa.aem-screens.net/products.html#ethiopian-yirgacheffe",
+            "name": "Ethiopian Yirgacheffe",
+            "image": "https://frescopa.aem-screens.net/images/products/ethiopian-main.jpg",
+            "description": "Bright, floral notes with citrus undertones from high-altitude farms",
+            "offers": {
+              "@type": "Offer",
+              "price": "24.99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            },
+            "brand": {
+              "@type": "Brand",
+              "name": "Fréscopa"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "237"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "@id": "https://frescopa.aem-screens.net/products.html#colombian-supremo",
+            "name": "Colombian Supremo",
+            "image": "https://frescopa.aem-screens.net/images/products/coffee-beans-2.jpg",
+            "description": "Rich, full-bodied with chocolate notes from the Andes mountains",
+            "offers": {
+              "@type": "Offer",
+              "price": "22.99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            },
+            "brand": {
+              "@type": "Brand",
+              "name": "Fréscopa"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "189"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "@id": "https://frescopa.aem-screens.net/products.html#guatemala-antigua",
+            "name": "Guatemala Antigua",
+            "image": "https://frescopa.aem-screens.net/images/products/coffee-beans-3.jpg",
+            "description": "Smoky, spicy with wine-like acidity grown in volcanic soil",
+            "offers": {
+              "@type": "Offer",
+              "price": "26.99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            },
+            "brand": {
+              "@type": "Brand",
+              "name": "Fréscopa"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.7",
+              "reviewCount": "156"
+            }
+          }
+        }
+      ]
+    }
+    </script>
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

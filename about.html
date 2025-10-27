@@ -27,6 +27,140 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
     
+    <!-- Enhanced Organization/Knowledge Graph Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://frescopa.aem-screens.net/#organization",
+      "name": "Fréscopa",
+      "alternateName": "Frescopa Coffee",
+      "url": "https://frescopa.aem-screens.net",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://frescopa.aem-screens.net/favicon.svg",
+        "width": "512",
+        "height": "512"
+      },
+      "description": "Premium coffee roastery and subscription service founded in 2018, sourcing exceptional beans from 15 countries and partnering with over 50 sustainable farms worldwide.",
+      "foundingDate": "2018",
+      "foundingLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Sarah Mitchell",
+          "jobTitle": "Co-Founder & CEO",
+          "description": "Coffee sourcing expert with 15 years of experience in sustainable farming practices"
+        },
+        {
+          "@type": "Person",
+          "name": "Marcus Chen",
+          "jobTitle": "Co-Founder & Head Roaster",
+          "description": "Certified Q Grader with expertise in coffee roasting science"
+        }
+      ],
+      "employee": [
+        {
+          "@type": "Person",
+          "name": "Elena Rodriguez",
+          "jobTitle": "Sustainability Director",
+          "description": "Oversees sustainability initiatives and farmer partnerships"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Coffee Street",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+        "postalCode": "94102",
+        "addressCountry": "US"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "telephone": "1-800-FRESCOPA",
+          "email": "support@frescopa.com",
+          "areaServed": ["US", "CA"],
+          "availableLanguage": ["English"],
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "18:00"
+          }
+        }
+      ],
+      "sameAs": [
+        "https://facebook.com/frescopa",
+        "https://instagram.com/frescopa",
+        "https://twitter.com/frescopa",
+        "https://youtube.com/frescopa"
+      ],
+      "knowsAbout": [
+        "Coffee Roasting",
+        "Specialty Coffee",
+        "Sustainable Agriculture",
+        "Fair Trade Coffee",
+        "Coffee Subscription Services",
+        "Direct Trade Coffee",
+        "Single Origin Coffee",
+        "Coffee Brewing Methods"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": ["United States", "Canada"]
+      },
+      "award": [
+        "100% Carbon Neutral Operations",
+        "Fair Trade Certified",
+        "Organic Certified",
+        "Rainforest Alliance Certified"
+      ],
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 25
+      },
+      "slogan": "Premium coffee experiences delivered to your door",
+      "brand": {
+        "@type": "Brand",
+        "name": "Fréscopa"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Fréscopa Coffee Company"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "2547",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+    
+    <!-- AboutPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "@id": "https://frescopa.aem-screens.net/#organization"
+      },
+      "description": "Learn about Fréscopa's journey, our commitment to sustainability, and our mission to bring the world's finest coffee to your cup."
+    }
+    </script>
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
