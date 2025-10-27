@@ -4,14 +4,70 @@ This document outlines all the schema markup (structured data) added to the Fres
 
 ## Schema Types Implemented
 
-### 1. **FAQ Schema** (`contact.html`)
+### 1. **FAQ Schema** (Multiple Pages)
+
+#### a. **Contact Page FAQ** (`contact.html`)
 - **Type:** FAQPage
-- **Purpose:** Enables FAQ rich snippets in Google search results
+- **Purpose:** Visible FAQ section with schema markup
 - **Coverage:** 8 frequently asked questions about shipping, freshness, subscriptions, returns, etc.
 - **Benefits:** 
   - Appears in Google's "People also ask" section
   - Increases visibility in voice search results
   - Can display directly in search results
+
+#### b. **Products Page FAQ** (`products.html`) - **INVISIBLE**
+- **Type:** FAQPage (JSON-LD only, not visible on page)
+- **Coverage:** 8 coffee education questions:
+  - What is single origin coffee?
+  - What does roast level mean?
+  - How long does coffee stay fresh?
+  - Arabica vs Robusta differences
+  - Fair Trade certification
+  - Whole bean vs ground
+  - Altitude effects on flavor
+  - Coffee processing methods
+- **Purpose:** Answer common product-related questions in search results
+
+#### c. **Brewing Guides Page FAQ** (`brewing-guides.html`) - **INVISIBLE**
+- **Type:** FAQPage (JSON-LD only, not visible on page)
+- **Coverage:** 9 brewing technique questions:
+  - Best coffee to water ratio
+  - Why coffee is bitter or sour
+  - Cold brew instructions
+  - Espresso grind size
+  - Equipment cleaning
+  - Coffee blooming process
+  - Reusing coffee grounds
+  - Latte vs cappuccino differences
+- **Purpose:** Provide brewing help in voice search and "People also ask"
+
+#### d. **About Page FAQ** (`about.html`) - **INVISIBLE**
+- **Type:** FAQPage (JSON-LD only, not visible on page)
+- **Coverage:** 9 company and sustainability questions:
+  - Direct trade explanation
+  - Sustainability practices
+  - Coffee sourcing origins
+  - Certifications
+  - Quality assurance process
+  - Specialty coffee definition
+  - Company history
+  - Roastery visits
+  - Return policy
+- **Purpose:** Establish brand authority and answer company-related queries
+
+#### e. **Home Page FAQ** (`index.html`) - **INVISIBLE**
+- **Type:** FAQPage (JSON-LD only, not visible on page)
+- **Coverage:** 9 subscription and ordering questions:
+  - How subscriptions work
+  - Changing subscriptions
+  - Subscription box contents
+  - Minimum commitment
+  - Gift subscriptions
+  - Caffeine content
+  - Coffee quiz explanation
+  - Payment methods
+  - Shipping timeframes
+- **Purpose:** Answer purchase-related questions before users even visit FAQ page
 
 ### 2. **LocalBusiness Schema** (`contact.html`)
 - **Type:** CoffeeShop
@@ -172,13 +228,34 @@ All schema markup has been structured according to Schema.org standards and shou
    - Course schema for brewing workshops
    - Blog posting schema for articles
 
+## Invisible FAQ Strategy
+
+**43 Total FAQ Questions** across 5 pages provide comprehensive coverage of topics users search for:
+
+### Why Invisible FAQs?
+- **Not cluttering page content** - Pages remain clean and focused on their primary purpose
+- **Search engine discovery** - Questions appear in "People also ask" and voice search
+- **Semantic relevance** - Each page's FAQs match its topic (products, brewing, company, subscriptions)
+- **Competitive advantage** - Answer questions before users even visit competitor sites
+- **Long-tail keywords** - Target specific questions people ask about coffee
+
+### Coverage Breakdown:
+- **Product Education**: 8 FAQs (products page)
+- **Brewing Techniques**: 9 FAQs (brewing guides page)  
+- **Company/Sustainability**: 9 FAQs (about page)
+- **Subscriptions/Orders**: 9 FAQs (home page)
+- **Customer Service**: 8 FAQs (contact page - visible)
+
+**Total: 43 strategically placed FAQ items** optimized for search discovery and voice assistants.
+
 ## Files Modified
 
-1. `contact.html` - FAQ and LocalBusiness schema
-2. `about.html` - Organization and AboutPage schema
-3. `brewing-guides.html` - HowTo schema for brewing methods
-4. `index.html` - BreadcrumbList, ItemList, and enhanced Product schema
-5. `products.html` - Already had Product schema (maintained)
+1. `contact.html` - FAQ and LocalBusiness schema (visible FAQs + JSON-LD)
+2. `about.html` - Organization, AboutPage, and invisible FAQ schema
+3. `brewing-guides.html` - HowTo schema and invisible FAQ schema
+4. `index.html` - BreadcrumbList, ItemList, Product, and invisible FAQ schema
+5. `products.html` - Product schema and invisible FAQ schema
+6. `SCHEMA-MARKUP.md` - This documentation file
 
 ---
 
