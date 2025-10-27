@@ -1,0 +1,130 @@
+# Robots.txt for Fréscopa Coffee Website
+# Optimized for search engines and AI platforms
+
+# Allow all crawlers access to the entire site
+User-agent: *
+Allow: /
+
+# Specific permissions for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# AI Platform Crawlers
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Additional AI and research bots
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude
+Allow: /
+
+User-agent: OpenAI
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Academic and research crawlers
+User-agent: ia_archiver
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+User-agent: Wayback
+Allow: /
+
+# E-commerce and shopping bots
+User-agent: ShopBot
+Allow: /
+
+User-agent: PriceGrabber
+Allow: /
+
+User-agent: Shopzilla
+Allow: /
+
+# News and content aggregators
+User-agent: NewsNow
+Allow: /
+
+User-agent: Moreover
+Allow: /
+
+# SEO and analytics crawlers
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+# Mobile app crawlers
+User-agent: Applebot
+Allow: /
+
+# Sitemap location
+Sitemap: https://frescopa.aem-screens.net/sitemap.xml
+
+# Additional sitemap references for comprehensive discovery
+# XML Sitemap for search engines
+Sitemap: https://frescopa.aem-screens.net/sitemap.xml
+
+# LLMs.txt for AI and Language Model platforms
+# Specific file for AI crawlers with detailed metadata
+LLMs: https://frescopa.aem-screens.net/llms.txt
+
+# LLMs-Full.txt for comprehensive AI training datasets
+# Extended metadata and business intelligence for advanced AI platforms
+LLMs-Full: https://frescopa.aem-screens.net/llms-full.txt
+
+# Future sitemap extensions (add when created)
+# Sitemap: https://frescopa.aem-screens.net/sitemap-products.xml
+# Sitemap: https://frescopa.aem-screens.net/sitemap-blog.xml
+# Sitemap: https://frescopa.aem-screens.net/sitemap-images.xml
+
+# Crawl-delay (optional - remove if causing issues)
+# Crawl-delay: 1
+
+# Cache directive for better performance
+# Cache-Control: public, max-age=86400

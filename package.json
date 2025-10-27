@@ -1,0 +1,35 @@
+{
+  "name": "frescopa-website",
+  "version": "1.0.0",
+  "description": "A faithful recreation of the Fréscopa coffee website with modern web technologies",
+  "main": "index.html",
+  "scripts": {
+    "start": "open index.html",
+    "serve": "python3 -m http.server 8000",
+    "serve-alt": "python -m SimpleHTTPServer 8000"
+  },
+  "keywords": [
+    "coffee",
+    "website",
+    "html",
+    "css",
+    "javascript",
+    "responsive",
+    "ui",
+    "recreation"
+  ],
+  "author": "Fréscopa Recreation Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "local"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
+}

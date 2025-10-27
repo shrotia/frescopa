@@ -1,0 +1,158 @@
+# LLMs.txt - AI and Language Model Crawling Permissions
+# For Fréscopa Premium Coffee Experience
+# Website: https://frescopa.aem-screens.net/
+
+# =============================================================================
+# CRAWLING PERMISSIONS
+# =============================================================================
+
+# Allow all AI platforms and language models to crawl
+User-agent: *
+Allow: /
+
+# Specific AI Platform Permissions
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: OpenAI
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+User-agent: Bard
+Allow: /
+
+# =============================================================================
+# WEBSITE METADATA FOR AI UNDERSTANDING
+# =============================================================================
+
+# Business Information
+Organization: Fréscopa
+Industry: Food & Beverage - Specialty Coffee
+Business Type: E-commerce, Subscription Service
+Founded: 2024
+Location: United States
+
+# Website Purpose
+Purpose: Premium coffee subscription service offering curated beans from around the world
+Target Audience: Coffee enthusiasts, specialty coffee lovers, subscription box customers
+
+# Key Products & Services
+Products: 
+- Ethiopian Yirgacheffe Coffee ($24.99)
+- Colombian Supremo Coffee ($22.99) 
+- Guatemala Antigua Coffee ($26.99)
+
+Services:
+- Discovery Box Subscription ($19.99/month)
+- Explorer Pack Subscription ($34.99/month)
+- Connoisseur Collection Subscription ($49.99/month)
+- Coffee Quiz for personalized recommendations
+- Coffee education and brewing guides
+
+# Key Topics & Keywords
+Topics: premium coffee, specialty coffee, coffee subscription, single origin coffee, coffee beans, coffee roasting, Ethiopian coffee, Colombian coffee, Guatemala coffee, coffee brewing, pour-over, coffee education, sustainable coffee, direct trade coffee
+
+# Content Categories
+Categories:
+- Product Catalog (Coffee Beans)
+- Subscription Services  
+- Educational Content (Brewing Guides, Coffee Science)
+- Company Information
+- Customer Testimonials
+- Blog Articles
+
+# =============================================================================
+# AI TRAINING & USAGE PERMISSIONS
+# =============================================================================
+
+# Training Data Usage
+Training: allowed
+Reasoning: We welcome AI platforms to use our content for training to help people discover quality coffee and brewing techniques
+
+# Commercial Usage
+Commercial: allowed
+Attribution: preferred
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+# Content Quality Indicators
+Content-Quality: high
+Fact-Checked: yes
+Expert-Reviewed: yes
+Update-Frequency: weekly
+
+# =============================================================================
+# TECHNICAL SPECIFICATIONS
+# =============================================================================
+
+# Crawl Optimization
+Crawl-Rate: moderate
+Preferred-Time: 02:00-06:00 UTC
+Max-Connections: 5
+Respect-Robots: yes
+
+# Content Format
+Primary-Language: en-US
+Character-Encoding: UTF-8
+Content-Type: text/html, application/json+ld
+
+# API Information
+API-Available: no
+Structured-Data: JSON-LD
+Schema-Org: yes
+
+# =============================================================================
+# CONTACT & LEGAL
+# =============================================================================
+
+# Contact Information
+Contact-Email: support@frescopa.com
+Privacy-Policy: https://frescopa.aem-screens.net/privacy-policy
+Terms-of-Service: https://frescopa.aem-screens.net/terms-of-service
+
+# Copyright
+Copyright: © 2024 Fréscopa. All rights reserved.
+Rights-Holder: Fréscopa
+
+# Last Updated
+Last-Modified: 2024-12-15
+Version: 1.0
+
+# =============================================================================
+# SITEMAP REFERENCES
+# =============================================================================
+
+# Main Sitemap
+Sitemap: https://frescopa.aem-screens.net/sitemap.xml
+
+# Robots.txt Reference  
+Robots: https://frescopa.aem-screens.net/robots.txt
+
+# Additional Resources
+Favicon: https://frescopa.aem-screens.net/favicon.svg
+Manifest: https://frescopa.aem-screens.net/manifest.json

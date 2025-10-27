@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewing Guides & Coffee Recipes - Fréscopa | Master Your Brew</title>
+    <meta name="description" content="Learn how to brew perfect coffee with our expert guides. Pour-over, French press, espresso tutorials, and delicious coffee recipes from professional baristas.">
+    <meta name="keywords" content="coffee brewing guides, pour over tutorial, french press guide, espresso brewing, coffee recipes, barista techniques">
+    <meta name="author" content="Fréscopa">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frescopa.aem-screens.net/brewing-guides.html">
+    <meta property="og:title" content="Coffee Brewing Guides & Recipes - Fréscopa">
+    <meta property="og:description" content="Master the art of coffee brewing with our expert guides and delicious recipes.">
+    <meta property="og:image" content="https://frescopa.aem-screens.net/favicon.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://frescopa.aem-screens.net/brewing-guides.html">
+    <meta property="twitter:title" content="Coffee Brewing Guides & Recipes - Fréscopa">
+    <meta property="twitter:description" content="Master the art of coffee brewing with our expert guides and delicious recipes.">
+    <meta property="twitter:image" content="https://frescopa.aem-screens.net/favicon.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html" style="color: #8B4513; text-decoration: none;">Fréscopa</a></h1>
+                </div>
+                <ul class="nav-menu" role="menubar">
+                    <li class="nav-item" role="none"><a href="products.html" class="nav-link" role="menuitem">Coffee</a></li>
+                    <li class="nav-item" role="none"><a href="index.html#subscription" class="nav-link" role="menuitem">Subscriptions</a></li>
+                    <li class="nav-item" role="none"><a href="brewing-guides.html" class="nav-link active" role="menuitem">Brewing Guides</a></li>
+                    <li class="nav-item" role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+                    <li class="nav-item" role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#" class="nav-link" aria-label="My Account">Account</a>
+                    <button class="cart-icon" aria-label="Shopping cart" aria-describedby="cart-count">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z" fill="currentColor"/>
+                        </svg>
+                        <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+                    </button>
+                </div>
+                <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" style="margin-top: 80px;">
+        <!-- Page Header -->
+        <section class="page-header" style="padding: 60px 0; background: linear-gradient(135deg, #f8f4f0 0%, #e8d5c4 100%);">
+            <div class="container">
+                <h1 class="section-title" style="margin-bottom: 1rem;">Master Your Brew</h1>
+                <p class="section-subtitle">Learn from our expert baristas with step-by-step guides, video tutorials, and delicious coffee recipes to elevate your home brewing experience.</p>
+            </div>
+        </section>
+
+        <!-- Coffee Basics -->
+        <section class="coffee-basics" id="basics" style="padding: 80px 0; background-color: #fff;">
+            <div class="container">
+                <h2 class="section-title">Coffee 101: The Fundamentals</h2>
+                <div class="basics-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="basic-card" style="background: #f8f4f0; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">☕</div>
+                        <h3 style="color: #2c1810; margin-bottom: 1rem; text-align: center;">Grind Size Matters</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 1rem;">The grind size dramatically affects extraction and flavor. Coarse for French press, medium for drip, fine for espresso.</p>
+                        <ul style="color: #666; line-height: 1.6; margin-left: 1.2rem;">
+                            <li><strong>Extra Coarse:</strong> Cold brew, cowboy coffee</li>
+                            <li><strong>Coarse:</strong> French press, percolator</li>
+                            <li><strong>Medium-Coarse:</strong> Chemex, pour-over</li>
+                            <li><strong>Medium:</strong> Drip coffee makers</li>
+                            <li><strong>Medium-Fine:</strong> V60, Aeropress</li>
+                            <li><strong>Fine:</strong> Espresso, Moka pot</li>
+                        </ul>
+                    </div>
+                    <div class="basic-card" style="background: #f8f4f0; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">🌡️</div>
+                        <h3 style="color: #2c1810; margin-bottom: 1rem; text-align: center;">Water Temperature</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 1rem;">Water temperature affects extraction rate and flavor balance. Too hot burns, too cool under-extracts.</p>
+                        <ul style="color: #666; line-height: 1.6; margin-left: 1.2rem;">
+                            <li><strong>195-205°F (90-96°C):</strong> Optimal range for most brewing</li>
+                            <li><strong>200°F (93°C):</strong> Sweet spot for pour-over</li>
+                            <li><strong>185-195°F (85-90°C):</strong> Light roasts, delicate flavors</li>
+                            <li><strong>205°F (96°C):</strong> Dark roasts, full extraction</li>
+                        </ul>
+                    </div>
+                    <div class="basic-card" style="background: #f8f4f0; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">⚖️</div>
+                        <h3 style="color: #2c1810; margin-bottom: 1rem; text-align: center;">Coffee to Water Ratio</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 1rem;">The golden ratio ensures consistent strength and flavor. Adjust to your taste preferences.</p>
+                        <ul style="color: #666; line-height: 1.6; margin-left: 1.2rem;">
+                            <li><strong>1:15-1:17:</strong> Standard pour-over ratio</li>
+                            <li><strong>1:12-1:15:</strong> Stronger, more concentrated</li>
+                            <li><strong>1:17-1:20:</strong> Lighter, more subtle</li>
+                            <li><strong>Example:</strong> 25g coffee to 375g water (1:15)</li>
+                        </ul>
+                    </div>
+                    <div class="basic-card" style="background: #f8f4f0; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">⏱️</div>
+                        <h3 style="color: #2c1810; margin-bottom: 1rem; text-align: center;">Brewing Time</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 1rem;">Different brewing methods require different contact times between coffee and water.</p>
+                        <ul style="color: #666; line-height: 1.6; margin-left: 1.2rem;">
+                            <li><strong>Espresso:</strong> 25-30 seconds</li>
+                            <li><strong>Pour-over:</strong> 2:30-4:00 minutes</li>
+                            <li><strong>French Press:</strong> 4:00 minutes</li>
+                            <li><strong>Cold Brew:</strong> 12-24 hours</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brewing Guide Videos Section -->
+        <section class="brewing-guides" style="padding: 80px 0; background-color: #f8f4f0;">
+            <div class="container">
+                <h2 class="section-title">Video Brewing Tutorials</h2>
+                <p class="section-subtitle">Learn from our expert baristas with step-by-step video tutorials</p>
+                <div class="brewing-grid">
+                    <div class="brewing-card" itemscope itemtype="https://schema.org/VideoObject">
+                        <div class="brewing-video-container">
+                            <video 
+                                controls 
+                                poster="images/brewing/pour-over.jpg"
+                                itemprop="contentUrl"
+                                aria-label="Pour-over coffee brewing tutorial"
+                            >
+                                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
+                                <track kind="captions" src="pour-over-tutorial-captions.vtt" srclang="en" label="English">
+                            </video>
+                            <div class="brewing-category">Tutorial</div>
+                        </div>
+                        <div class="brewing-content">
+                            <h3 itemprop="name">Perfect Pour-Over Technique</h3>
+                            <p itemprop="description">Master the art of pour-over brewing with our step-by-step guide. Learn grind size, water temperature, and pouring technique for optimal extraction.</p>
+                            <div class="brewing-meta">
+                                <span class="duration">⏱️ 8 minutes</span>
+                                <span class="difficulty">👨‍🍳 Intermediate</span>
+                            </div>
+                            <meta itemprop="duration" content="PT8M" />
+                            <meta itemprop="uploadDate" content="2024-12-15" />
+                        </div>
+                    </div>
+                    <div class="brewing-card" itemscope itemtype="https://schema.org/VideoObject">
+                        <div class="brewing-video-container">
+                            <video 
+                                controls 
+                                poster="images/brewing/french-press.jpg"
+                                itemprop="contentUrl"
+                                aria-label="French press coffee brewing tutorial"
+                            >
+                                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
+                                <track kind="captions" src="french-press-tutorial-captions.vtt" srclang="en" label="English">
+                            </video>
+                            <div class="brewing-category">Tutorial</div>
+                        </div>
+                        <div class="brewing-content">
+                            <h3 itemprop="name">French Press Mastery</h3>
+                            <p itemprop="description">Discover the secrets of French press brewing for rich, full-bodied coffee. Learn steeping time, proper grind size, and optimal technique.</p>
+                            <div class="brewing-meta">
+                                <span class="duration">⏱️ 6 minutes</span>
+                                <span class="difficulty">👶 Beginner</span>
+                            </div>
+                            <meta itemprop="duration" content="PT6M" />
+                            <meta itemprop="uploadDate" content="2024-12-12" />
+                        </div>
+                    </div>
+                    <div class="brewing-card" itemscope itemtype="https://schema.org/VideoObject">
+                        <div class="brewing-video-container">
+                            <video 
+                                controls 
+                                poster="images/hero/hero-video-poster.jpg"
+                                itemprop="contentUrl"
+                                aria-label="Espresso brewing tutorial for home baristas"
+                            >
+                                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4" type="video/mp4">
+                                <track kind="captions" src="espresso-tutorial-captions.vtt" srclang="en" label="English">
+                            </video>
+                            <div class="brewing-category">Advanced</div>
+                        </div>
+                        <div class="brewing-content">
+                            <h3 itemprop="name">Home Espresso Excellence</h3>
+                            <p itemprop="description">Create café-quality espresso at home. Learn about grind consistency, tamping pressure, and extraction timing for perfect shots.</p>
+                            <div class="brewing-meta">
+                                <span class="duration">⏱️ 12 minutes</span>
+                                <span class="difficulty">🔥 Advanced</span>
+                            </div>
+                            <meta itemprop="duration" content="PT12M" />
+                            <meta itemprop="uploadDate" content="2024-12-10" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coffee Recipes Section -->
+        <section class="coffee-recipes" style="padding: 80px 0; background-color: #fff;">
+            <div class="container">
+                <h2 class="section-title">Coffee Recipes & Techniques</h2>
+                <p class="section-subtitle">Discover delicious coffee recipes and brewing techniques from our expert baristas</p>
+                <div class="recipes-grid">
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <div class="recipe-image">
+                            <img 
+                                src="images/recipes/cold-brew.jpg" 
+                                alt="Iced coffee with cold brew concentrate and milk"
+                                itemprop="image"
+                                loading="lazy"
+                            />
+                            <div class="recipe-difficulty">Easy</div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3 itemprop="name">Perfect Cold Brew</h3>
+                            <p itemprop="description">Smooth, rich cold brew coffee that's perfect for hot summer days. Low acidity and naturally sweet flavor that's perfect on its own or with milk.</p>
+                            <div class="recipe-meta">
+                                <span class="prep-time">
+                                    <time itemprop="prepTime" datetime="PT5M">⏱️ 5 min prep</time>
+                                </span>
+                                <span class="total-time">
+                                    <time itemprop="totalTime" datetime="PT12H">🕐 12 hours</time>
+                                </span>
+                                <span class="servings" itemprop="recipeYield">👥 4 servings</span>
+                            </div>
+                            <div class="recipe-ingredients" itemprop="recipeIngredient">
+                                <h4>Ingredients:</h4>
+                                <ul>
+                                    <li>1 cup coarsely ground coffee (medium-dark roast)</li>
+                                    <li>4 cups cold water</li>
+                                    <li>Ice cubes</li>
+                                    <li>Milk or cream (optional)</li>
+                                    <li>Simple syrup (optional)</li>
+                                </ul>
+                            </div>
+                            <div class="recipe-instructions" itemprop="recipeInstructions">
+                                <h4>Instructions:</h4>
+                                <ol>
+                                    <li>Combine coffee grounds and cold water in a large jar or container</li>
+                                    <li>Stir well to ensure all grounds are saturated</li>
+                                    <li>Cover and refrigerate for 12-24 hours</li>
+                                    <li>Strain through fine mesh or coffee filter twice for clarity</li>
+                                    <li>Serve over ice, dilute with water or milk as desired</li>
+                                </ol>
+                            </div>
+                            <div class="recipe-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                <span class="stars">★★★★★</span>
+                                <meta itemprop="ratingValue" content="5" />
+                                <meta itemprop="reviewCount" content="127" />
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <div class="recipe-image">
+                            <img 
+                                src="images/recipes/cappuccino.jpg" 
+                                alt="Cappuccino with perfect microfoam latte art"
+                                itemprop="image"
+                                loading="lazy"
+                            />
+                            <div class="recipe-difficulty">Intermediate</div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3 itemprop="name">Café-Quality Cappuccino</h3>
+                            <p itemprop="description">Learn to create the perfect cappuccino with silky microfoam and rich espresso. Master the art of milk steaming at home for café-quality results.</p>
+                            <div class="recipe-meta">
+                                <span class="prep-time">
+                                    <time itemprop="prepTime" datetime="PT3M">⏱️ 3 min prep</time>
+                                </span>
+                                <span class="total-time">
+                                    <time itemprop="totalTime" datetime="PT5M">🕐 5 minutes</time>
+                                </span>
+                                <span class="servings" itemprop="recipeYield">👥 1 serving</span>
+                            </div>
+                            <div class="recipe-ingredients" itemprop="recipeIngredient">
+                                <h4>Ingredients:</h4>
+                                <ul>
+                                    <li>2 shots fresh espresso (18-20g coffee beans)</li>
+                                    <li>4 oz (120ml) whole milk</li>
+                                    <li>Cocoa powder for dusting (optional)</li>
+                                    <li>Sugar or sweetener (optional)</li>
+                                </ul>
+                            </div>
+                            <div class="recipe-instructions" itemprop="recipeInstructions">
+                                <h4>Instructions:</h4>
+                                <ol>
+                                    <li>Extract double shot of espresso into preheated cup</li>
+                                    <li>Steam milk to 150-160°F, creating microfoam texture</li>
+                                    <li>Tap pitcher to settle foam, swirl to integrate</li>
+                                    <li>Pour steamed milk in circular motion, creating latte art</li>
+                                    <li>Dust with cocoa powder if desired and serve immediately</li>
+                                </ol>
+                            </div>
+                            <div class="recipe-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                <span class="stars">★★★★☆</span>
+                                <meta itemprop="ratingValue" content="4.5" />
+                                <meta itemprop="reviewCount" content="89" />
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <div class="recipe-image">
+                            <img 
+                                src="images/recipes/v60-pourover.jpg" 
+                                alt="V60 pour-over coffee brewing technique demonstration"
+                                itemprop="image"
+                                loading="lazy"
+                            />
+                            <div class="recipe-difficulty">Advanced</div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3 itemprop="name">V60 Pour-Over Perfection</h3>
+                            <p itemprop="description">Master the Japanese V60 pour-over technique for bright, clean coffee with complex flavor notes. Precision brewing at its finest with detailed timing guide.</p>
+                            <div class="recipe-meta">
+                                <span class="prep-time">
+                                    <time itemprop="prepTime" datetime="PT2M">⏱️ 2 min prep</time>
+                                </span>
+                                <span class="total-time">
+                                    <time itemprop="totalTime" datetime="PT4M">🕐 4 minutes</time>
+                                </span>
+                                <span class="servings" itemprop="recipeYield">👥 1 serving</span>
+                            </div>
+                            <div class="recipe-ingredients" itemprop="recipeIngredient">
+                                <h4>Ingredients:</h4>
+                                <ul>
+                                    <li>22g medium-fine ground coffee</li>
+                                    <li>350ml water at 200°F (93°C)</li>
+                                    <li>V60 filter paper</li>
+                                    <li>Gooseneck kettle recommended</li>
+                                </ul>
+                            </div>
+                            <div class="recipe-instructions" itemprop="recipeInstructions">
+                                <h4>Instructions:</h4>
+                                <ol>
+                                    <li>Rinse V60 filter and preheat dripper and cup</li>
+                                    <li>Add coffee grounds, create small well in center</li>
+                                    <li>Start timer, bloom with 40ml water for 30 seconds</li>
+                                    <li>Pour in slow circles: 150ml by 1:15, 250ml by 2:00</li>
+                                    <li>Final pour to 350ml by 2:30, finish dripping by 3:30</li>
+                                </ol>
+                            </div>
+                            <div class="recipe-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                <span class="stars">★★★★★</span>
+                                <meta itemprop="ratingValue" content="4.8" />
+                                <meta itemprop="reviewCount" content="156" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Additional Recipes -->
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <div class="recipe-image">
+                            <img 
+                                src="images/gallery/latte-art.jpg" 
+                                alt="Iced vanilla latte with beautiful presentation"
+                                itemprop="image"
+                                loading="lazy"
+                            />
+                            <div class="recipe-difficulty">Easy</div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3 itemprop="name">Iced Vanilla Latte</h3>
+                            <p itemprop="description">A refreshing twist on the classic latte with homemade vanilla syrup. Perfect for warm weather and easily customizable to your taste preferences.</p>
+                            <div class="recipe-meta">
+                                <span class="prep-time">
+                                    <time itemprop="prepTime" datetime="PT5M">⏱️ 5 min prep</time>
+                                </span>
+                                <span class="total-time">
+                                    <time itemprop="totalTime" datetime="PT5M">🕐 5 minutes</time>
+                                </span>
+                                <span class="servings" itemprop="recipeYield">👥 1 serving</span>
+                            </div>
+                            <div class="recipe-ingredients" itemprop="recipeIngredient">
+                                <h4>Ingredients:</h4>
+                                <ul>
+                                    <li>2 shots espresso or 1/2 cup strong coffee</li>
+                                    <li>1 cup cold milk</li>
+                                    <li>2 tbsp vanilla syrup</li>
+                                    <li>Ice cubes</li>
+                                    <li>Whipped cream (optional)</li>
+                                </ul>
+                            </div>
+                            <div class="recipe-instructions" itemprop="recipeInstructions">
+                                <h4>Instructions:</h4>
+                                <ol>
+                                    <li>Brew espresso shots and let cool slightly</li>
+                                    <li>Fill glass with ice cubes</li>
+                                    <li>Add vanilla syrup to the glass</li>
+                                    <li>Pour espresso over ice</li>
+                                    <li>Top with cold milk and whipped cream if desired</li>
+                                </ol>
+                            </div>
+                            <div class="recipe-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                <span class="stars">★★★★★</span>
+                                <meta itemprop="ratingValue" content="4.7" />
+                                <meta itemprop="reviewCount" content="203" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <div class="recipe-image">
+                            <img 
+                                src="images/gallery/cupping-session.jpg" 
+                                alt="Coffee cupping session setup with multiple cups"
+                                itemprop="image"
+                                loading="lazy"
+                            />
+                            <div class="recipe-difficulty">Intermediate</div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3 itemprop="name">Coffee Cupping Guide</h3>
+                            <p itemprop="description">Learn the professional method for tasting and evaluating coffee. Develop your palate and understand flavor notes like a professional barista.</p>
+                            <div class="recipe-meta">
+                                <span class="prep-time">
+                                    <time itemprop="prepTime" datetime="PT10M">⏱️ 10 min prep</time>
+                                </span>
+                                <span class="total-time">
+                                    <time itemprop="totalTime" datetime="PT20M">🕐 20 minutes</time>
+                                </span>
+                                <span class="servings" itemprop="recipeYield">👥 3-5 coffees</span>
+                            </div>
+                            <div class="recipe-ingredients" itemprop="recipeIngredient">
+                                <h4>What You Need:</h4>
+                                <ul>
+                                    <li>3-5 different coffee samples (8g each)</li>
+                                    <li>Cupping bowls or small glasses</li>
+                                    <li>Hot water (200°F/93°C)</li>
+                                    <li>Cupping spoons</li>
+                                    <li>Timer</li>
+                                </ul>
+                            </div>
+                            <div class="recipe-instructions" itemprop="recipeInstructions">
+                                <h4>Instructions:</h4>
+                                <ol>
+                                    <li>Grind each coffee to medium-coarse consistency</li>
+                                    <li>Smell the dry grounds and note aromas</li>
+                                    <li>Add hot water, start 4-minute timer</li>
+                                    <li>Break the crust at 4 minutes, smell again</li>
+                                    <li>Wait 10-15 minutes, then taste with spoon</li>
+                                    <li>Note acidity, body, flavor, and finish</li>
+                                </ol>
+                            </div>
+                            <div class="recipe-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                <span class="stars">★★★★☆</span>
+                                <meta itemprop="ratingValue" content="4.3" />
+                                <meta itemprop="reviewCount" content="67" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <div class="recipe-image">
+                            <img 
+                                src="images/brewing/french-press.jpg" 
+                                alt="Affogato dessert with vanilla ice cream and espresso"
+                                itemprop="image"
+                                loading="lazy"
+                            />
+                            <div class="recipe-difficulty">Easy</div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3 itemprop="name">Classic Affogato</h3>
+                            <p itemprop="description">The perfect Italian dessert combining hot espresso with cold vanilla gelato. Simple, elegant, and absolutely delicious as an after-dinner treat.</p>
+                            <div class="recipe-meta">
+                                <span class="prep-time">
+                                    <time itemprop="prepTime" datetime="PT2M">⏱️ 2 min prep</time>
+                                </span>
+                                <span class="total-time">
+                                    <time itemprop="totalTime" datetime="PT3M">🕐 3 minutes</time>
+                                </span>
+                                <span class="servings" itemprop="recipeYield">👥 1 serving</span>
+                            </div>
+                            <div class="recipe-ingredients" itemprop="recipeIngredient">
+                                <h4>Ingredients:</h4>
+                                <ul>
+                                    <li>1-2 shots hot espresso</li>
+                                    <li>2 scoops vanilla gelato or ice cream</li>
+                                    <li>Amaretti cookies (optional)</li>
+                                    <li>Dark chocolate shavings (optional)</li>
+                                </ul>
+                            </div>
+                            <div class="recipe-instructions" itemprop="recipeInstructions">
+                                <h4>Instructions:</h4>
+                                <ol>
+                                    <li>Place vanilla gelato in a chilled glass or bowl</li>
+                                    <li>Brew fresh espresso shots</li>
+                                    <li>Pour hot espresso directly over the gelato</li>
+                                    <li>Serve immediately with cookies on the side</li>
+                                    <li>Optional: top with chocolate shavings</li>
+                                </ol>
+                            </div>
+                            <div class="recipe-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                <span class="stars">★★★★★</span>
+                                <meta itemprop="ratingValue" content="4.9" />
+                                <meta itemprop="reviewCount" content="142" />
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipment Guide -->
+        <section class="equipment-guide" style="padding: 80px 0; background-color: #f8f4f0;">
+            <div class="container">
+                <h2 class="section-title">Essential Brewing Equipment</h2>
+                <div class="equipment-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                    <div class="equipment-card" style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚖️</div>
+                        <h3 style="color: #2c1810; margin-bottom: 1rem;">Digital Scale</h3>
+                        <p style="color: #666; line-height: 1.6;">Precision is key to consistent brewing. A digital scale helps you measure coffee and water accurately for perfect ratios every time.</p>
+                    </div>
+                    <div class="equipment-card" style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌡️</div>
+                        <h3 style="color: #2c1810; margin-bottom: 1rem;">Thermometer</h3>
+                        <p style="color: #666; line-height: 1.6;">Water temperature affects extraction. A thermometer ensures your water is in the optimal 195-205°F range for best results.</p>
+                    </div>
+                    <div class="equipment-card" style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚗️</div>
+                        <h3 style="color: #2c1810; margin-bottom: 1rem;">Gooseneck Kettle</h3>
+                        <p style="color: #666; line-height: 1.6;">For pour-over methods, a gooseneck kettle provides precise water flow control for even extraction and beautiful brewing technique.</p>
+                    </div>
+                    <div class="equipment-card" style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚙️</div>
+                        <h3 style="color: #2c1810; margin-bottom: 1rem;">Quality Grinder</h3>
+                        <p style="color: #666; line-height: 1.6;">Fresh grinding is essential. A burr grinder provides consistent particle size for optimal extraction and flavor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Get More Brewing Tips</h2>
+                    <p>Subscribe to receive exclusive brewing guides, recipes, and expert tips delivered to your inbox.</p>
+                    <form class="newsletter-form" aria-label="Newsletter signup">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email address</label>
+                            <input type="email" id="email" placeholder="Enter your email address" required aria-describedby="email-error">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                        <div id="email-error" class="error-message" role="alert" aria-live="polite"></div>
+                        <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Fréscopa</h3>
+                    <p>Premium coffee experiences delivered to your door.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Follow us on Facebook">Facebook</a>
+                        <a href="#" class="social-link" aria-label="Follow us on Instagram">Instagram</a>
+                        <a href="#" class="social-link" aria-label="Follow us on Twitter">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html">All Coffee</a></li>
+                        <li><a href="index.html#subscription">Subscriptions</a></li>
+                        <li><a href="#">Gear</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="brewing-guides.html">Brewing Guides</a></li>
+                        <li><a href="about.html#origins">Origin Stories</a></li>
+                        <li><a href="brewing-guides.html#basics">Coffee 101</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="contact.html#faq">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fréscopa. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

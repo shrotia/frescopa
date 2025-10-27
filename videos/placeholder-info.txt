@@ -1,0 +1,18 @@
+Video Placeholders
+==================
+
+The following sample video files can be used as placeholders:
+- BigBuckBunny.mp4 - For testimonial videos
+- Sintel.mp4 - For brewing guide videos  
+- TearsOfSteel.mp4 - For additional content
+
+For production, replace these with actual coffee-related videos:
+1. Customer testimonial videos
+2. Coffee brewing tutorials
+3. Origin story documentaries
+4. Behind-the-scenes content
+
+You can download free sample videos from:
+- https://sample-videos.com/
+- https://www.learningcontainer.com/sample-video-files/
+- Big Buck Bunny (Creative Commons)

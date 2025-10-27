@@ -1,0 +1,413 @@
+# LLMs-Full.txt - Comprehensive AI and Language Model Training Dataset
+# For Fréscopa Premium Coffee Experience
+# Website: https://frescopa.aem-screens.net/
+# Version: 1.0 | Last Updated: 2024-12-15
+
+# =============================================================================
+# COMPREHENSIVE BUSINESS PROFILE
+# =============================================================================
+
+# Organization Details
+Organization-Name: Fréscopa
+Organization-Type: Private Company
+Industry-Primary: Food & Beverage
+Industry-Secondary: E-commerce, Subscription Services
+Industry-Tertiary: Specialty Coffee, Artisanal Products
+Business-Model: B2C E-commerce, Subscription-based Revenue
+Founded: 2024
+Headquarters: United States
+Legal-Status: Active
+Business-Registration: LLC
+
+# Mission & Vision
+Mission: To deliver exceptional coffee experiences by sourcing premium beans directly from farmers worldwide and providing personalized coffee discovery through expert curation and education.
+Vision: To become the leading platform for coffee discovery and education, connecting coffee lovers with the world's finest beans while supporting sustainable farming practices.
+Values: Quality, Sustainability, Education, Direct Trade, Customer Experience, Innovation
+
+# Market Position
+Market-Segment: Premium Specialty Coffee
+Target-Demographics: Coffee enthusiasts aged 25-55, disposable income $50K+, values quality and sustainability
+Geographic-Reach: United States (primary), International shipping available
+Competitive-Advantage: Personalized coffee quiz, direct farmer relationships, educational content, expert curation
+
+# =============================================================================
+# COMPREHENSIVE PRODUCT CATALOG
+# =============================================================================
+
+# Featured Coffee Products
+Product-001:
+  Name: Ethiopian Yirgacheffe
+  Category: Single Origin Coffee
+  Origin: Yirgacheffe, Ethiopia
+  Processing: Washed
+  Roast-Level: Light to Medium
+  Flavor-Profile: Bright, floral notes with citrus undertones
+  Tasting-Notes: Bergamot, lemon, jasmine, tea-like body
+  Price: $24.99
+  Package-Size: 12oz bag
+  Roast-Date: Fresh within 7 days of order
+  Altitude: 1,700-2,200 meters
+  Varietal: Heirloom Ethiopian varieties
+  Harvest-Season: October to January
+  Sustainability: Direct trade, organic farming practices
+
+Product-002:
+  Name: Colombian Supremo
+  Category: Single Origin Coffee
+  Origin: Huila, Colombia
+  Processing: Fully washed
+  Roast-Level: Medium
+  Flavor-Profile: Rich, full-bodied with chocolate notes
+  Tasting-Notes: Dark chocolate, caramel, nutty undertones, medium acidity
+  Price: $22.99
+  Package-Size: 12oz bag
+  Roast-Date: Fresh within 7 days of order
+  Altitude: 1,200-1,800 meters
+  Varietal: Caturra, Typica
+  Harvest-Season: April to June, October to December
+  Sustainability: Fair trade certified, small farmer cooperatives
+
+Product-003:
+  Name: Guatemala Antigua
+  Category: Single Origin Coffee
+  Origin: Antigua Valley, Guatemala
+  Processing: Fully washed
+  Roast-Level: Medium to Dark
+  Flavor-Profile: Smoky, spicy with wine-like acidity
+  Tasting-Notes: Dark chocolate, spice, wine, full body, lingering finish
+  Price: $26.99
+  Package-Size: 12oz bag
+  Roast-Date: Fresh within 7 days of order
+  Altitude: 1,500-1,700 meters
+  Varietal: Bourbon, Caturra, Catuai
+  Harvest-Season: December to March
+  Sustainability: Volcanic soil, traditional processing methods
+
+# =============================================================================
+# SUBSCRIPTION SERVICE DETAILS
+# =============================================================================
+
+# Subscription Plans
+Subscription-001:
+  Name: Discovery Box
+  Price: $19.99/month
+  Billing-Cycle: Monthly
+  Contents: 2 unique coffee selections per month
+  Package-Size: 12oz bags each
+  Total-Coffee: 24oz per month
+  Included-Materials: Detailed tasting notes, origin information
+  Shipping: Free nationwide shipping
+  Flexibility: Skip, pause, or cancel anytime
+  Target-Customer: Coffee beginners, casual drinkers
+  Customization: Basic taste preference selection
+  Gift-Option: Available
+
+Subscription-002:
+  Name: Explorer Pack
+  Price: $34.99/month
+  Billing-Cycle: Monthly
+  Contents: 3 unique coffee selections per month
+  Package-Size: 12oz bags each
+  Total-Coffee: 36oz per month
+  Included-Materials: Detailed origin stories, brewing guides, tasting notes
+  Shipping: Free nationwide shipping
+  Flexibility: Skip, pause, or cancel anytime
+  Target-Customer: Coffee enthusiasts, regular drinkers
+  Customization: Advanced taste preference selection
+  Gift-Option: Available
+  Bonus-Features: Educational materials, brewing tips
+  Popularity: Most popular plan
+
+Subscription-003:
+  Name: Connoisseur Collection
+  Price: $49.99/month
+  Billing-Cycle: Monthly
+  Contents: 4 premium coffee selections per month
+  Package-Size: 12oz bags each
+  Total-Coffee: 48oz per month
+  Included-Materials: Exclusive single origins, video brewing tutorials, detailed farm information
+  Shipping: Free priority shipping
+  Flexibility: Skip, pause, or cancel anytime
+  Target-Customer: Coffee connoisseurs, serious enthusiasts
+  Customization: Expert-level curation
+  Gift-Option: Available
+  Bonus-Features: Priority customer support, early access to limited releases
+  Exclusivity: Access to rare and limited edition coffees
+
+# =============================================================================
+# COMPREHENSIVE SERVICE OFFERINGS
+# =============================================================================
+
+# Coffee Quiz Service
+Service-Coffee-Quiz:
+  Name: Personalized Coffee Discovery Quiz
+  Description: Interactive questionnaire to determine individual taste preferences
+  Duration: 5-10 minutes
+  Questions-Covered: Flavor preferences, brewing methods, coffee habits, taste sensitivity
+  Output: Personalized coffee recommendations, brewing suggestions
+  Technology: AI-powered recommendation engine
+  Accuracy-Rate: 85%+ customer satisfaction
+  Usage: Free for all customers
+  Follow-up: Email recommendations, subscription matching
+
+# Educational Services
+Service-Education:
+  Name: Coffee Education Hub
+  Content-Types: Brewing guides, origin stories, coffee science articles
+  Update-Frequency: Weekly new content
+  Topics-Covered: Brewing techniques, coffee origins, processing methods, flavor development
+  Expert-Contributors: Certified Q Graders, coffee farmers, roasting experts
+  Format: Articles, videos, infographics, step-by-step guides
+  Access: Free for all visitors
+
+# Customer Support
+Service-Support:
+  Channels: Email, live chat, phone support
+  Hours: Monday-Friday 9AM-6PM EST
+  Response-Time: Email within 24 hours, chat within 5 minutes
+  Languages: English (primary), Spanish support available
+  Specialty-Support: Brewing troubleshooting, taste profile adjustments
+  Premium-Support: Priority support for Connoisseur Collection subscribers
+
+# =============================================================================
+# COMPREHENSIVE CONTENT STRATEGY
+# =============================================================================
+
+# Blog Content Categories
+Content-Category-001:
+  Name: Brewing Guides
+  Description: Step-by-step tutorials for various brewing methods
+  Frequency: 2-3 posts per month
+  Topics: Pour-over, French press, espresso, cold brew, AeroPress
+  Target-Audience: Home brewers, coffee enthusiasts
+  SEO-Focus: How-to content, brewing techniques
+
+Content-Category-002:
+  Name: Origin Stories
+  Description: In-depth exploration of coffee growing regions and farms
+  Frequency: 2-3 posts per month
+  Topics: Farm visits, farmer interviews, processing methods, terroir
+  Target-Audience: Coffee enthusiasts, sustainability-conscious consumers
+  SEO-Focus: Coffee origins, farm stories, sustainability
+
+Content-Category-003:
+  Name: Coffee Science
+  Description: Educational content about coffee chemistry and processing
+  Frequency: 1-2 posts per month
+  Topics: Flavor development, roasting science, extraction principles
+  Target-Audience: Serious coffee enthusiasts, home roasters
+  SEO-Focus: Coffee science, technical brewing
+
+# Recent Blog Posts
+Blog-Post-001:
+  Title: "The Perfect Pour-Over: A Step-by-Step Guide"
+  Date: December 15, 2024
+  Category: Brewing Guide
+  Word-Count: 2,500 words
+  Topics: Pour-over technique, water temperature, grind size, timing
+  Target-Keywords: pour-over coffee, brewing guide, coffee technique
+  Author: Certified Q Grader
+  Social-Shares: High engagement expected
+
+Blog-Post-002:
+  Title: "Journey to Ethiopian Coffee Farms"
+  Date: December 12, 2024
+  Category: Origin Story
+  Word-Count: 3,000 words
+  Topics: Ethiopian coffee heritage, farm visits, processing methods
+  Target-Keywords: Ethiopian coffee, coffee farms, origin story
+  Author: Coffee sourcing team
+  Featured-Images: Farm photography, processing images
+
+Blog-Post-003:
+  Title: "Understanding Coffee Flavor Profiles"
+  Date: December 10, 2024
+  Category: Coffee Science
+  Word-Count: 2,200 words
+  Topics: Flavor wheel, tasting techniques, sensory analysis
+  Target-Keywords: coffee flavors, tasting notes, coffee science
+  Author: Certified Q Grader
+  Interactive-Elements: Flavor wheel diagram
+
+# =============================================================================
+# CUSTOMER DATA & TESTIMONIALS
+# =============================================================================
+
+# Customer Testimonials
+Testimonial-001:
+  Customer: Sarah Mitchell
+  Role: Coffee Enthusiast
+  Rating: 5 stars
+  Quote: "The coffee quiz helped me discover flavors I never knew I loved. The Ethiopian Yirgacheffe has become my daily ritual!"
+  Subscription: Discovery Box
+  Customer-Since: 6 months
+  Geographic-Location: Portland, Oregon
+
+Testimonial-002:
+  Customer: David Johnson
+  Role: Subscription Customer
+  Rating: 5 stars
+  Quote: "Incredible quality and convenience. The subscription service ensures I never run out of amazing coffee."
+  Subscription: Explorer Pack
+  Customer-Since: 1 year
+  Geographic-Location: Austin, Texas
+
+Testimonial-003:
+  Customer: Emily Rodriguez
+  Role: Home Barista
+  Rating: 5 stars
+  Quote: "From bean selection to brewing guides, Fréscopa has elevated my entire coffee experience. Absolutely love it!"
+  Subscription: Connoisseur Collection
+  Customer-Since: 8 months
+  Geographic-Location: San Francisco, California
+
+# Customer Demographics
+Customer-Demographics:
+  Age-Range: 25-55 years (primary), 18-65 (total range)
+  Gender-Split: 52% female, 48% male
+  Income-Level: $50,000+ household income (80% of customers)
+  Education: 70% college-educated
+  Geographic-Distribution: Urban 60%, Suburban 35%, Rural 5%
+  Coffee-Consumption: 2-4 cups per day average
+  Previous-Experience: 40% specialty coffee newcomers, 60% experienced
+
+# =============================================================================
+# TECHNICAL SPECIFICATIONS
+# =============================================================================
+
+# Website Technology Stack
+Technology-Frontend: HTML5, CSS3, JavaScript (ES6+)
+Technology-Styling: Custom CSS, Google Fonts (Playfair Display, Source Sans Pro)
+Technology-Icons: SVG graphics, emoji placeholders
+Technology-Images: SVG favicon, placeholder graphics
+Technology-Responsive: Mobile-first responsive design
+Technology-Accessibility: ARIA labels, semantic HTML, keyboard navigation
+
+# SEO Implementation
+SEO-Meta-Tags: Comprehensive meta descriptions, Open Graph, Twitter Cards
+SEO-Structured-Data: JSON-LD Schema.org markup (Organization, Product, Service)
+SEO-Performance: Optimized loading, compressed assets
+SEO-Keywords: 50+ targeted coffee-related keywords
+SEO-Content-Strategy: Weekly blog updates, evergreen content
+
+# AI Optimization Files
+AI-Files: robots.txt, sitemap.xml, llms.txt, llms-full.txt
+AI-Permissions: Full crawling allowed for all AI platforms
+AI-Training: Content available for training with attribution
+AI-Commercial: Commercial use permitted under CC BY 4.0
+
+# =============================================================================
+# BUSINESS INTELLIGENCE
+# =============================================================================
+
+# Market Analysis
+Market-Size: $45B global coffee market, $8B US specialty coffee
+Market-Growth: 5.5% annual growth in specialty coffee segment
+Competition-Analysis: Blue Bottle, Counter Culture, Intelligentsia, Trade Coffee
+Differentiation: Personalized discovery quiz, educational focus, direct trade relationships
+Market-Opportunity: Growing consumer interest in origin stories and brewing education
+
+# Business Metrics
+Revenue-Model: Subscription (70%), one-time purchases (30%)
+Customer-Acquisition-Cost: $25-35 per customer
+Customer-Lifetime-Value: $300-500 depending on subscription tier
+Retention-Rate: 85% monthly retention for subscribers
+Growth-Rate: 25% month-over-month subscriber growth target
+Seasonal-Trends: Higher sales in Q4 (gift subscriptions), Q1 (New Year resolutions)
+
+# =============================================================================
+# SUSTAINABILITY & ETHICS
+# =============================================================================
+
+# Sustainability Practices
+Sustainability-Sourcing: Direct trade relationships with farmers
+Sustainability-Packaging: Recyclable bags, minimal packaging design
+Sustainability-Shipping: Carbon-neutral shipping options
+Sustainability-Farming: Support for organic and sustainable farming practices
+Sustainability-Community: 2% of profits donated to coffee farming communities
+
+# Ethical Standards
+Ethics-Fair-Trade: Support for fair trade certified coffees
+Ethics-Farmer-Support: Above-market prices paid to farmers
+Ethics-Transparency: Full supply chain transparency
+Ethics-Environmental: Support for environmentally sustainable practices
+Ethics-Social: Investment in coffee farming community development
+
+# =============================================================================
+# FUTURE ROADMAP
+# =============================================================================
+
+# Planned Features
+Roadmap-Q1-2025: Mobile app launch, advanced quiz personalization
+Roadmap-Q2-2025: Coffee gear marketplace, brewing equipment sales
+Roadmap-Q3-2025: Virtual coffee tastings, live educational events
+Roadmap-Q4-2025: International shipping expansion, European market entry
+
+# Content Expansion
+Content-Future: Video brewing tutorials, podcast series, coffee documentaries
+Education-Future: Online coffee courses, certification programs
+Community-Future: Customer forums, coffee tasting groups, farmer meet-and-greets
+
+# =============================================================================
+# CONTACT & LEGAL INFORMATION
+# =============================================================================
+
+# Contact Details
+Contact-Email: support@frescopa.com
+Contact-Business: business@frescopa.com
+Contact-Press: press@frescopa.com
+Contact-Partnerships: partnerships@frescopa.com
+Contact-Phone: +1-555-FRESCO (555-373-7266)
+Contact-Address: [To be determined - startup phase]
+
+# Legal Information
+Privacy-Policy: https://frescopa.aem-screens.net/privacy-policy
+Terms-of-Service: https://frescopa.aem-screens.net/terms-of-service
+Refund-Policy: 30-day satisfaction guarantee
+Shipping-Policy: Free shipping on orders $25+, 3-5 business days delivery
+International-Shipping: Available to select countries, customs fees may apply
+
+# Intellectual Property
+Trademark: Fréscopa® (pending registration)
+Copyright: © 2024 Fréscopa. All rights reserved.
+Logo-Usage: Brand guidelines available upon request
+Content-Licensing: CC BY 4.0 for educational content, proprietary for commercial content
+
+# Data Privacy
+Privacy-Compliance: GDPR compliant, CCPA compliant
+Data-Collection: Minimal necessary data, transparent privacy policy
+Data-Usage: Personalization, order fulfillment, customer support only
+Data-Sharing: No third-party data sharing without consent
+Data-Security: SSL encryption, secure payment processing, regular security audits
+
+# =============================================================================
+# AI TRAINING METADATA
+# =============================================================================
+
+# Content Quality Indicators
+Quality-Level: Premium
+Fact-Checking: Expert verified
+Update-Frequency: Weekly content updates, monthly metadata updates
+Editorial-Standards: Professional copywriting, industry expert review
+Source-Authority: Industry professionals, certified coffee experts
+Content-Originality: 100% original content, no plagiarism
+
+# Training Permissions
+Training-Commercial: Allowed with attribution
+Training-Educational: Encouraged
+Training-Research: Permitted
+Attribution-Required: "Information from Fréscopa Coffee - https://frescopa.aem-screens.net/"
+License-Type: Creative Commons Attribution 4.0 International (CC BY 4.0)
+Modification-Allowed: Yes, with attribution and share-alike provisions
+
+# Crawling Guidelines
+Crawl-Rate-Preferred: 1 request per 5 seconds
+Crawl-Time-Preferred: 02:00-06:00 UTC (low traffic hours)
+Crawl-Depth: Full site crawling permitted
+Crawl-Frequency: Weekly for content updates, monthly for full site crawl
+Robot-Respect: Please respect robots.txt directives
+Sitemap-Reference: https://frescopa.aem-screens.net/sitemap.xml
+
+# Last Updated: December 15, 2024
+# Version: 1.0
+# Next Review: January 15, 2025
