@@ -382,6 +382,220 @@
     }
     </script>
     
+    <!-- UNIQUE TEST: Product with Offers - Volcanic Thunder Blend -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Volcanic Thunder Blend",
+      "description": "A bold, smoky single-origin roast from the volcanic slopes of Mount Kerinci, Indonesia. Notes of dark tobacco, molasses, and roasted chestnut.",
+      "sku": "VOL-THUN-2024-101",
+      "gtin13": "8901234567890",
+      "brand": {
+        "@type": "Brand",
+        "name": "Fréscopa Reserve Collection"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "29.99",
+        "highPrice": "89.99",
+        "priceCurrency": "USD",
+        "offerCount": "3",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "250g Bag",
+            "price": "29.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition"
+          },
+          {
+            "@type": "Offer",
+            "name": "500g Bag",
+            "price": "54.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition"
+          },
+          {
+            "@type": "Offer",
+            "name": "1kg Bag",
+            "price": "89.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/LimitedAvailability",
+            "itemCondition": "https://schema.org/NewCondition"
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "156"
+      },
+      "roastLevel": "Dark",
+      "altitude": "1400-1700 meters",
+      "processingMethod": "Wet-Hulled (Giling Basah)",
+      "harvestSeason": "June-September 2024"
+    }
+    </script>
+    
+    <!-- UNIQUE TEST: Product with Offers - Arctic Frost Limited Edition -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Arctic Frost Limited Edition",
+      "description": "Ultra-rare white honey processed beans from Honduras with delicate floral notes. Only 200 bags produced annually.",
+      "sku": "ARC-FRST-2024-LE",
+      "gtin13": "8905678901234",
+      "brand": {
+        "@type": "Brand",
+        "name": "Fréscopa Luxe Series"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "124.50",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/PreOrder",
+        "availabilityStarts": "2025-01-15T00:00:00-08:00",
+        "priceValidUntil": "2025-03-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "42"
+      },
+      "tastingNotes": "White peach, elderflower, honeycomb, jasmine",
+      "processingMethod": "White Honey Process",
+      "limitedEdition": true,
+      "totalProduction": "200 bags"
+    }
+    </script>
+    
+    <!-- UNIQUE TEST: Product with Subscription Offers - Odyssey Collection -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Odyssey Collection Subscription",
+      "description": "Monthly curated journey through world's finest single-origin coffees. Each month features a different rare micro-lot selection.",
+      "sku": "ODY-SUB-MONTHLY",
+      "brand": {
+        "@type": "Brand",
+        "name": "Fréscopa Voyager Program"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Monthly Subscription - Explorer",
+          "description": "2 bags per month (500g total)",
+          "price": "49.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "49.99",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly Subscription - Connoisseur",
+          "description": "4 bags per month (1kg total) + exclusive tasting notes",
+          "price": "89.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "89.99",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Annual Subscription - Grandmaster",
+          "description": "Full year prepaid with 2 bonus months free. Includes premium Fréscopa ceramic dripper set.",
+          "price": "899.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "899.00",
+            "priceCurrency": "USD",
+            "billingDuration": "P1Y"
+          }
+        }
+      ],
+      "currentMonth": "December 2024 - Ethiopian Sidamo Guji Natural",
+      "totalSubscribers": "1,247 active members"
+    }
+    </script>
+    
+    <!-- UNIQUE TEST: Equipment Product - Precision Pro Grinder -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Fréscopa Precision Pro Grinder X9",
+      "description": "Professional-grade conical burr grinder with 63mm titanium-coated burrs, 40 grind settings, and integrated scale.",
+      "sku": "EQUIP-GRND-X9-PRO",
+      "gtin13": "8909012345678",
+      "brand": {
+        "@type": "Brand",
+        "name": "Fréscopa Equipment"
+      },
+      "color": "Matte Black / Brushed Steel",
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": "4.2",
+        "unitCode": "KGM"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "649.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "warranty": "5-year manufacturer warranty"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "89"
+      },
+      "features": [
+        "63mm titanium-coated conical burrs",
+        "40 precision grind settings",
+        "Built-in 0.1g accuracy scale",
+        "Anti-static technology",
+        "Single-dose hopper",
+        "Magnetic grounds bin"
+      ],
+      "modelNumber": "FPC-X9-2024",
+      "releaseDate": "2024-09-15"
+    }
+    </script>
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
