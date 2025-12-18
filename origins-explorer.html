@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Origins Explorer - Fréscopa | Discover Coffee Regions</title>
+    <meta name="description" content="Explore coffee origins from around the world. Interactive map and detailed information about coffee-growing regions, their unique flavors, and cultural significance.">
+    <meta name="keywords" content="coffee origins, coffee regions, Ethiopia coffee, Colombia coffee, Guatemala coffee, single origin coffee, coffee geography">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frescopa.aem-screens.net/origins-explorer.html">
+    <meta property="og:title" content="Coffee Origins Explorer - Fréscopa">
+    <meta property="og:description" content="Explore coffee origins from around the world with interactive maps and detailed information.">
+    <meta property="og:image" content="https://frescopa.aem-screens.net/favicon.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://frescopa.aem-screens.net/origins-explorer.html">
+    <meta property="twitter:title" content="Coffee Origins Explorer - Fréscopa">
+    <meta property="twitter:description" content="Explore coffee origins from around the world with interactive maps and detailed information.">
+    <meta property="twitter:image" content="https://frescopa.aem-screens.net/favicon.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #8B4513;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .origins-container {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+        
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 2rem;
+            flex-wrap: wrap;
+            background: #f8f4f0;
+        }
+        
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #8B4513;
+            background: white;
+            color: #8B4513;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #8B4513;
+            color: white;
+        }
+        
+        .origins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .origin-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .origin-card.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .origin-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .origin-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+        }
+        
+        .origin-content {
+            padding: 1.5rem;
+        }
+        
+        .origin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+        
+        .origin-name {
+            font-size: 1.5rem;
+            color: #2c1810;
+            margin: 0;
+        }
+        
+        .origin-flag {
+            font-size: 2rem;
+        }
+        
+        .origin-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 0.75rem;
+            background: #f8f4f0;
+            border-radius: 8px;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #8B4513;
+        }
+        
+        .origin-description {
+            color: #666;
+            line-height: 1.6;
+            margin: 1rem 0;
+        }
+        
+        .origin-flavors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .flavor-tag {
+            padding: 0.4rem 0.8rem;
+            background: #8B4513;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .view-details-btn {
+            width: 100%;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: #8B4513;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .view-details-btn:hover {
+            background: #6B3410;
+        }
+        
+        .origin-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 10001;
+            overflow-y: auto;
+        }
+        
+        .origin-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+        
+        .detail-section h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #8B4513;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -1.45rem;
+            top: 1.1rem;
+            width: 2px;
+            height: calc(100% - 0.5rem);
+            background: #ddd;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header (will be populated by JS) -->
+    <header class="header" role="banner" id="mainHeader"></header>
+
+    <!-- Main Content -->
+    <main role="main" class="origins-container">
+        <div class="container">
+            <!-- Filter Bar (will be populated by JS) -->
+            <div class="filter-bar" id="filterBar"></div>
+            
+            <!-- Origins Grid (will be populated by JS) -->
+            <div class="origins-grid" id="originsGrid"></div>
+        </div>
+    </main>
+
+    <!-- Origin Detail Modal (will be populated by JS) -->
+    <div class="origin-modal" id="originModal"></div>
+
+    <!-- Footer (will be populated by JS) -->
+    <footer id="mainFooter"></footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Coffee Origins Data - Loaded dynamically
+        const originsData = [
+            {
+                id: 'ethiopia',
+                name: 'Ethiopia',
+                flag: '🇪🇹',
+                region: 'Africa',
+                altitude: '1,700-2,200m',
+                harvest: 'October - December',
+                processing: 'Washed, Natural, Honey',
+                description: 'The birthplace of coffee, Ethiopia offers some of the world\'s most unique and complex flavors. Each region has distinct characteristics that reflect centuries of coffee tradition.',
+                flavors: ['Floral', 'Citrus', 'Berry', 'Wine-like'],
+                image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800',
+                details: {
+                    history: 'Coffee was first discovered in Ethiopia\'s Kaffa region. The legend of Kaldi and his dancing goats marks the beginning of coffee culture.',
+                    regions: [
+                        { name: 'Yirgacheffe', description: 'Bright, floral notes with citrus undertones' },
+                        { name: 'Sidamo', description: 'Complex fruit flavors with wine-like acidity' },
+                        { name: 'Harrar', description: 'Bold, wild flavors with blueberry notes' }
+                    ],
+                    climate: 'High altitude, cool temperatures, and distinct wet/dry seasons create ideal growing conditions.',
+                    cultural: 'Coffee ceremonies are central to Ethiopian culture, involving elaborate rituals that can last hours.'
+                }
+            },
+            {
+                id: 'colombia',
+                name: 'Colombia',
+                flag: '🇨🇴',
+                region: 'South America',
+                altitude: '1,200-1,800m',
+                harvest: 'April - June, October - December',
+                processing: 'Washed',
+                description: 'Colombia\'s diverse microclimates produce consistently balanced coffees with rich body and bright acidity. The country\'s commitment to quality is unmatched.',
+                flavors: ['Caramel', 'Chocolate', 'Nutty', 'Apple'],
+                image: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800',
+                details: {
+                    history: 'Coffee arrived in Colombia in the 18th century and quickly became central to the economy. Today, it\'s the world\'s third-largest producer.',
+                    regions: [
+                        { name: 'Huila', description: 'Sweet, balanced with caramel notes' },
+                        { name: 'Nariño', description: 'Bright acidity with citrus and floral notes' },
+                        { name: 'Antioquia', description: 'Full body with chocolate and nutty flavors' }
+                    ],
+                    climate: 'Mountainous terrain with consistent rainfall and moderate temperatures year-round.',
+                    cultural: 'Coffee farming is a family tradition passed down through generations, with many farms being small, family-owned operations.'
+                }
+            },
+            {
+                id: 'guatemala',
+                name: 'Guatemala',
+                flag: '🇬🇹',
+                region: 'Central America',
+                altitude: '1,500-2,000m',
+                harvest: 'December - April',
+                processing: 'Washed, Natural',
+                description: 'Guatemala\'s volcanic soil and high altitudes produce coffees with exceptional complexity. The country is known for its distinct regional profiles.',
+                flavors: ['Spicy', 'Chocolate', 'Citrus', 'Smoky'],
+                image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800',
+                details: {
+                    history: 'Coffee was introduced to Guatemala in the 1850s and became a major export crop. The country\'s unique geography creates diverse flavor profiles.',
+                    regions: [
+                        { name: 'Antigua', description: 'Complex, spicy with wine-like acidity' },
+                        { name: 'Huehuetenango', description: 'Bright, fruity with floral notes' },
+                        { name: 'Atitlán', description: 'Rich body with chocolate and spice' }
+                    ],
+                    climate: 'Volcanic soil, high altitude, and distinct microclimates create ideal conditions for specialty coffee.',
+                    cultural: 'Coffee is deeply integrated into Guatemalan culture, with many farms using traditional processing methods.'
+                }
+            },
+            {
+                id: 'kenya',
+                name: 'Kenya',
+                flag: '🇰🇪',
+                region: 'Africa',
+                altitude: '1,500-2,100m',
+                harvest: 'April - June, October - December',
+                processing: 'Washed',
+                description: 'Kenya produces some of the world\'s most sought-after coffees, known for their bright acidity, complex fruit flavors, and wine-like characteristics.',
+                flavors: ['Blackcurrant', 'Grapefruit', 'Wine-like', 'Berry'],
+                image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800',
+                details: {
+                    history: 'Coffee was introduced to Kenya in the late 19th century. The country\'s auction system ensures quality and transparency.',
+                    regions: [
+                        { name: 'Nyeri', description: 'Bright acidity with blackcurrant and citrus' },
+                        { name: 'Kirinyaga', description: 'Complex fruit flavors with wine-like acidity' },
+                        { name: 'Murang\'a', description: 'Balanced with berry and floral notes' }
+                    ],
+                    climate: 'High altitude, rich volcanic soil, and distinct wet/dry seasons create exceptional growing conditions.',
+                    cultural: 'Kenya\'s coffee industry is known for its quality control and innovative processing techniques.'
+                }
+            },
+            {
+                id: 'costa-rica',
+                name: 'Costa Rica',
+                flag: '🇨🇷',
+                region: 'Central America',
+                altitude: '1,200-1,700m',
+                harvest: 'December - March',
+                processing: 'Washed, Honey, Natural',
+                description: 'Costa Rica is renowned for its clean, bright coffees with balanced acidity. The country\'s commitment to quality and sustainability sets it apart.',
+                flavors: ['Citrus', 'Honey', 'Caramel', 'Floral'],
+                image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=800',
+                details: {
+                    history: 'Coffee has been grown in Costa Rica since the 18th century and became a major export in the 19th century. The country banned Robusta cultivation to focus on quality.',
+                    regions: [
+                        { name: 'Tarrazú', description: 'Bright acidity with citrus and floral notes' },
+                        { name: 'West Valley', description: 'Balanced with honey and caramel sweetness' },
+                        { name: 'Central Valley', description: 'Clean, bright with fruit notes' }
+                    ],
+                    climate: 'Consistent rainfall, high altitude, and rich volcanic soil create ideal conditions.',
+                    cultural: 'Coffee is central to Costa Rican identity, with many farms practicing sustainable and environmentally friendly methods.'
+                }
+            },
+            {
+                id: 'brazil',
+                name: 'Brazil',
+                flag: '🇧🇷',
+                region: 'South America',
+                altitude: '800-1,200m',
+                harvest: 'May - September',
+                processing: 'Natural, Pulped Natural',
+                description: 'As the world\'s largest coffee producer, Brazil offers a wide range of flavors from nutty and chocolatey to fruity and complex.',
+                flavors: ['Nutty', 'Chocolate', 'Caramel', 'Low Acidity'],
+                image: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800',
+                details: {
+                    history: 'Coffee arrived in Brazil in the 18th century and quickly became the country\'s most important export. Brazil revolutionized coffee production with mechanization.',
+                    regions: [
+                        { name: 'Cerrado', description: 'Sweet, balanced with nutty and chocolate notes' },
+                        { name: 'Sul de Minas', description: 'Full body with caramel sweetness' },
+                        { name: 'Mogiana', description: 'Smooth, balanced with low acidity' }
+                    ],
+                    climate: 'Lower altitude, consistent climate, and large-scale production create Brazil\'s characteristic profile.',
+                    cultural: 'Coffee is deeply embedded in Brazilian culture, consumed throughout the day in various forms.'
+                }
+            }
+        ];
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            initializePage();
+        });
+
+        function initializePage() {
+            // Load header
+            loadHeader();
+            
+            // Load footer
+            loadFooter();
+            
+            // Load filter bar
+            loadFilterBar();
+            
+            // Load origins grid
+            loadOriginsGrid();
+            
+            // Hide loading screen after content loads
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 800);
+        }
+
+        function loadHeader() {
+            const header = document.getElementById('mainHeader');
+            header.innerHTML = `
+                <nav class="nav" role="navigation" aria-label="Main navigation">
+                    <div class="nav-container">
+                        <div class="nav-logo">
+                            <h1><a href="index.html" style="color: #8B4513; text-decoration: none;">Fréscopa</a></h1>
+                        </div>
+                        <ul class="nav-menu" role="menubar">
+                            <li class="nav-item" role="none"><a href="products.html" class="nav-link" role="menuitem">Coffee</a></li>
+                            <li class="nav-item" role="none"><a href="index.html#subscription" class="nav-link" role="menuitem">Subscriptions</a></li>
+                            <li class="nav-item" role="none"><a href="brewing-guides.html" class="nav-link" role="menuitem">Brewing Guides</a></li>
+                            <li class="nav-item" role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+                            <li class="nav-item" role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+                        </ul>
+                        <div class="nav-actions">
+                            <a href="#" class="nav-link" aria-label="My Account">Account</a>
+                            <button class="cart-icon" aria-label="Shopping cart">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z" fill="currentColor"/>
+                                </svg>
+                                <span class="cart-count" id="cart-count">0</span>
+                            </button>
+                        </div>
+                        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+                            <span></span><span></span><span></span>
+                        </button>
+                    </div>
+                </nav>
+            `;
+        }
+
+        function loadFooter() {
+            const footer = document.getElementById('mainFooter');
+            footer.innerHTML = `
+                <footer class="footer">
+                    <div class="container">
+                        <div class="footer-content">
+                            <div class="footer-section">
+                                <h3>Fréscopa</h3>
+                                <p>Premium coffee from around the world, delivered fresh to your door.</p>
+                                <div class="social-links">
+                                    <a href="#" class="social-link">Facebook</a>
+                                    <a href="#" class="social-link">Instagram</a>
+                                    <a href="#" class="social-link">Twitter</a>
+                                </div>
+                            </div>
+                            <div class="footer-section">
+                                <h4>Shop</h4>
+                                <ul>
+                                    <li><a href="products.html">All Coffee</a></li>
+                                    <li><a href="index.html#subscription">Subscriptions</a></li>
+                                    <li><a href="origins-explorer.html">Coffee Origins</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-section">
+                                <h4>Learn</h4>
+                                <ul>
+                                    <li><a href="brewing-guides.html">Brewing Guides</a></li>
+                                    <li><a href="origins-explorer.html">Origin Explorer</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-section">
+                                <h4>Support</h4>
+                                <ul>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="#">Shipping</a></li>
+                                    <li><a href="#">Returns</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <p>&copy; 2024 Fréscopa. All rights reserved.</p>
+                            <div class="footer-links">
+                                <a href="#">Privacy Policy</a>
+                                <a href="#">Terms of Service</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            `;
+        }
+
+        function loadFilterBar() {
+            const filterBar = document.getElementById('filterBar');
+            const regions = ['All', ...new Set(originsData.map(o => o.region))];
+            
+            filterBar.innerHTML = regions.map(region => `
+                <button class="filter-btn ${region === 'All' ? 'active' : ''}" data-region="${region}">
+                    ${region}
+                </button>
+            `).join('');
+            
+            // Add event listeners
+            filterBar.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterOrigins(btn.dataset.region);
+                });
+            });
+        }
+
+        function loadOriginsGrid(filterRegion = 'All') {
+            const grid = document.getElementById('originsGrid');
+            const filtered = filterRegion === 'All' 
+                ? originsData 
+                : originsData.filter(o => o.region === filterRegion);
+            
+            grid.innerHTML = filtered.map((origin, index) => `
+                <div class="origin-card" data-origin="${origin.id}" style="transition-delay: ${index * 0.1}s">
+                    <img src="${origin.image}" alt="${origin.name} coffee" class="origin-image" onerror="this.style.background='linear-gradient(135deg, #8B4513 0%, #D2691E 100%)'">
+                    <div class="origin-content">
+                        <div class="origin-header">
+                            <h3 class="origin-name">${origin.name}</h3>
+                            <span class="origin-flag">${origin.flag}</span>
+                        </div>
+                        <div class="origin-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Altitude</div>
+                                <div class="stat-value">${origin.altitude}</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Harvest</div>
+                                <div class="stat-value">${origin.harvest}</div>
+                            </div>
+                        </div>
+                        <p class="origin-description">${origin.description}</p>
+                        <div class="origin-flavors">
+                            ${origin.flavors.map(flavor => `<span class="flavor-tag">${flavor}</span>`).join('')}
+                        </div>
+                        <button class="view-details-btn" onclick="showOriginDetails('${origin.id}')">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Animate cards
+            setTimeout(() => {
+                grid.querySelectorAll('.origin-card').forEach(card => {
+                    card.classList.add('loaded');
+                });
+            }, 100);
+        }
+
+        function filterOrigins(region) {
+            const grid = document.getElementById('originsGrid');
+            grid.querySelectorAll('.origin-card').forEach(card => {
+                card.classList.remove('loaded');
+            });
+            
+            setTimeout(() => {
+                loadOriginsGrid(region);
+            }, 300);
+        }
+
+        function showOriginDetails(originId) {
+            const origin = originsData.find(o => o.id === originId);
+            if (!origin) return;
+            
+            const modal = document.getElementById('originModal');
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>${origin.flag} ${origin.name} - Coffee Origins</h2>
+                        <button class="modal-close" onclick="closeOriginModal()">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="detail-section">
+                            <h3>History & Culture</h3>
+                            <p>${origin.details.history}</p>
+                            <p><strong>Cultural Significance:</strong> ${origin.details.cultural}</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Growing Regions</h3>
+                            <div class="timeline">
+                                ${origin.details.regions.map(reg => `
+                                    <div class="timeline-item">
+                                        <h4>${reg.name}</h4>
+                                        <p>${reg.description}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Climate & Terroir</h3>
+                            <p>${origin.details.climate}</p>
+                            <div class="origin-stats" style="margin-top: 1rem;">
+                                <div class="stat-item">
+                                    <div class="stat-label">Altitude</div>
+                                    <div class="stat-value">${origin.altitude}</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Harvest Season</div>
+                                    <div class="stat-value">${origin.harvest}</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Processing</div>
+                                    <div class="stat-value">${origin.processing}</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Region</div>
+                                    <div class="stat-value">${origin.region}</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>Flavor Profile</h3>
+                            <div class="origin-flavors">
+                                ${origin.flavors.map(flavor => `<span class="flavor-tag">${flavor}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeOriginModal();
+            });
+        }
+
+        function closeOriginModal() {
+            const modal = document.getElementById('originModal');
+            modal.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
+

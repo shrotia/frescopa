@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Tasting Notes - Fréscopa | Flavor Profiles & Tasting Guide</title>
+    <meta name="description" content="Explore coffee tasting notes and flavor profiles. Interactive guides to help you understand coffee flavors, aromas, and tasting techniques.">
+    <meta name="keywords" content="coffee tasting, flavor profiles, coffee notes, cupping, coffee flavors, tasting guide">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frescopa.aem-screens.net/tasting-notes.html">
+    <meta property="og:title" content="Coffee Tasting Notes - Fréscopa">
+    <meta property="og:description" content="Explore coffee tasting notes and flavor profiles with interactive guides.">
+    <meta property="og:image" content="https://frescopa.aem-screens.net/favicon.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://frescopa.aem-screens.net/tasting-notes.html">
+    <meta property="twitter:title" content="Coffee Tasting Notes - Fréscopa">
+    <meta property="twitter:description" content="Explore coffee tasting notes and flavor profiles with interactive guides.">
+    <meta property="twitter:image" content="https://frescopa.aem-screens.net/favicon.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .tasting-container {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+        
+        .hero-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+        }
+        
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .tasting-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .tool-card.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tool-card h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+        }
+        
+        .flavor-wheel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .flavor-wheel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            aspect-ratio: 1;
+        }
+        
+        .wheel-svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .flavor-segment {
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        
+        .flavor-segment:hover {
+            opacity: 0.8;
+        }
+        
+        .coffee-profiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .profile-card.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .profile-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+        }
+        
+        .profile-header h3 {
+            margin: 0;
+            color: white;
+        }
+        
+        .profile-body {
+            padding: 1.5rem;
+        }
+        
+        .flavor-chart {
+            margin: 1.5rem 0;
+        }
+        
+        .flavor-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        
+        .flavor-label {
+            width: 120px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .flavor-bar-container {
+            flex: 1;
+            height: 24px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 0 1rem;
+        }
+        
+        .flavor-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8B4513 0%, #D2691E 100%);
+            border-radius: 12px;
+            transition: width 1s ease;
+        }
+        
+        .flavor-value {
+            width: 40px;
+            text-align: right;
+            font-weight: 600;
+            color: #8B4513;
+        }
+        
+        .tasting-notes {
+            margin-top: 1rem;
+        }
+        
+        .note-tag {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            background: #f8f4f0;
+            color: #8B4513;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 0.25rem;
+        }
+        
+        .interactive-section {
+            background: #f8f4f0;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+        }
+        
+        .cupping-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c1810;
+            font-weight: 600;
+        }
+        
+        .slider-container {
+            position: relative;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #8B4513;
+            cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #8B4513;
+            cursor: pointer;
+        }
+        
+        .slider-value {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            color: #8B4513;
+        }
+        
+        .results-display {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f4f0;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .results-display.active {
+            display: block;
+        }
+        
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #8B4513;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header (will be populated by JS) -->
+    <header class="header" role="banner" id="mainHeader"></header>
+
+    <!-- Main Content -->
+    <main role="main" class="tasting-container">
+        <!-- Hero Section (will be populated by JS) -->
+        <section class="hero-section" id="heroSection"></section>
+        
+        <!-- Tasting Tools (will be populated by JS) -->
+        <section class="tasting-tools" id="tastingTools"></section>
+        
+        <!-- Coffee Profiles (will be populated by JS) -->
+        <section class="coffee-profiles" id="coffeeProfiles"></section>
+        
+        <!-- Interactive Cupping Form (will be populated by JS) -->
+        <section class="interactive-section">
+            <div class="cupping-form" id="cuppingForm"></div>
+        </section>
+    </main>
+
+    <!-- Footer (will be populated by JS) -->
+    <footer id="mainFooter"></footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Coffee Profile Data
+        const coffeeProfiles = [
+            {
+                name: 'Ethiopian Yirgacheffe',
+                acidity: 9,
+                body: 6,
+                sweetness: 7,
+                bitterness: 3,
+                aroma: 9,
+                notes: ['Jasmine', 'Bergamot', 'Lemon', 'Blueberry', 'Tea-like'],
+                description: 'Bright and floral with pronounced citrus acidity'
+            },
+            {
+                name: 'Colombian Supremo',
+                acidity: 7,
+                body: 8,
+                sweetness: 8,
+                bitterness: 5,
+                aroma: 7,
+                notes: ['Caramel', 'Chocolate', 'Apple', 'Nutty', 'Balanced'],
+                description: 'Well-balanced with rich body and caramel sweetness'
+            },
+            {
+                name: 'Guatemala Antigua',
+                acidity: 8,
+                body: 7,
+                sweetness: 6,
+                bitterness: 6,
+                aroma: 8,
+                notes: ['Spicy', 'Chocolate', 'Citrus', 'Wine-like', 'Complex'],
+                description: 'Complex with spicy notes and wine-like acidity'
+            },
+            {
+                name: 'Kenyan AA',
+                acidity: 10,
+                body: 7,
+                sweetness: 6,
+                bitterness: 4,
+                aroma: 9,
+                notes: ['Blackcurrant', 'Grapefruit', 'Wine', 'Berry', 'Bright'],
+                description: 'Exceptionally bright with intense fruit flavors'
+            },
+            {
+                name: 'Costa Rica Tarrazú',
+                acidity: 8,
+                body: 6,
+                sweetness: 7,
+                bitterness: 4,
+                aroma: 8,
+                notes: ['Citrus', 'Honey', 'Floral', 'Clean', 'Bright'],
+                description: 'Clean and bright with citrus and honey notes'
+            },
+            {
+                name: 'Brazil Cerrado',
+                acidity: 4,
+                body: 8,
+                sweetness: 9,
+                bitterness: 3,
+                aroma: 6,
+                notes: ['Nutty', 'Chocolate', 'Caramel', 'Low Acidity', 'Smooth'],
+                description: 'Smooth and sweet with low acidity and nutty flavors'
+            }
+        ];
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            initializePage();
+        });
+
+        function initializePage() {
+            loadHeader();
+            loadFooter();
+            loadHeroSection();
+            loadTastingTools();
+            loadCoffeeProfiles();
+            
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 800);
+        }
+
+        function loadHeader() {
+            const header = document.getElementById('mainHeader');
+            header.innerHTML = `
+                <nav class="nav" role="navigation" aria-label="Main navigation">
+                    <div class="nav-container">
+                        <div class="nav-logo">
+                            <h1><a href="index.html" style="color: #8B4513; text-decoration: none;">Fréscopa</a></h1>
+                        </div>
+                        <ul class="nav-menu" role="menubar">
+                            <li class="nav-item" role="none"><a href="products.html" class="nav-link" role="menuitem">Coffee</a></li>
+                            <li class="nav-item" role="none"><a href="index.html#subscription" class="nav-link" role="menuitem">Subscriptions</a></li>
+                            <li class="nav-item" role="none"><a href="brewing-guides.html" class="nav-link" role="menuitem">Brewing Guides</a></li>
+                            <li class="nav-item" role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+                            <li class="nav-item" role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+                        </ul>
+                        <div class="nav-actions">
+                            <a href="#" class="nav-link" aria-label="My Account">Account</a>
+                            <button class="cart-icon" aria-label="Shopping cart">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z" fill="currentColor"/>
+                                </svg>
+                                <span class="cart-count" id="cart-count">0</span>
+                            </button>
+                        </div>
+                        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+                            <span></span><span></span><span></span>
+                        </button>
+                    </div>
+                </nav>
+            `;
+        }
+
+        function loadFooter() {
+            const footer = document.getElementById('mainFooter');
+            footer.innerHTML = `
+                <footer class="footer">
+                    <div class="container">
+                        <div class="footer-content">
+                            <div class="footer-section">
+                                <h3>Fréscopa</h3>
+                                <p>Premium coffee from around the world, delivered fresh to your door.</p>
+                                <div class="social-links">
+                                    <a href="#" class="social-link">Facebook</a>
+                                    <a href="#" class="social-link">Instagram</a>
+                                    <a href="#" class="social-link">Twitter</a>
+                                </div>
+                            </div>
+                            <div class="footer-section">
+                                <h4>Shop</h4>
+                                <ul>
+                                    <li><a href="products.html">All Coffee</a></li>
+                                    <li><a href="index.html#subscription">Subscriptions</a></li>
+                                    <li><a href="tasting-notes.html">Tasting Notes</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-section">
+                                <h4>Learn</h4>
+                                <ul>
+                                    <li><a href="brewing-guides.html">Brewing Guides</a></li>
+                                    <li><a href="tasting-notes.html">Tasting Guide</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-section">
+                                <h4>Support</h4>
+                                <ul>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="#">Shipping</a></li>
+                                    <li><a href="#">Returns</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <p>&copy; 2024 Fréscopa. All rights reserved.</p>
+                            <div class="footer-links">
+                                <a href="#">Privacy Policy</a>
+                                <a href="#">Terms of Service</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            `;
+        }
+
+        function loadHeroSection() {
+            const hero = document.getElementById('heroSection');
+            hero.innerHTML = `
+                <h1>Coffee Tasting Notes</h1>
+                <p>Discover the art of coffee tasting. Learn to identify flavors, aromas, and characteristics that make each coffee unique. Use our interactive tools to develop your palate and find your perfect cup.</p>
+            `;
+        }
+
+        function loadTastingTools() {
+            const tools = document.getElementById('tastingTools');
+            const toolData = [
+                { icon: '☕', title: 'Flavor Profiles', desc: 'Explore detailed flavor profiles of our coffee collection' },
+                { icon: '👃', title: 'Aroma Guide', desc: 'Learn to identify different coffee aromas and their origins' },
+                { icon: '👅', title: 'Taste Testing', desc: 'Interactive cupping form to record your tasting notes' },
+                { icon: '📊', title: 'Compare Coffees', desc: 'Side-by-side comparison of different coffee profiles' }
+            ];
+            
+            tools.innerHTML = toolData.map((tool, index) => `
+                <div class="tool-card" style="transition-delay: ${index * 0.1}s">
+                    <div class="tool-icon">${tool.icon}</div>
+                    <h3>${tool.title}</h3>
+                    <p>${tool.desc}</p>
+                </div>
+            `).join('');
+            
+            setTimeout(() => {
+                tools.querySelectorAll('.tool-card').forEach(card => {
+                    card.classList.add('loaded');
+                });
+            }, 100);
+        }
+
+        function loadCoffeeProfiles() {
+            const profiles = document.getElementById('coffeeProfiles');
+            profiles.innerHTML = coffeeProfiles.map((coffee, index) => `
+                <div class="profile-card" style="transition-delay: ${index * 0.1}s">
+                    <div class="profile-header">
+                        <h3>${coffee.name}</h3>
+                        <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">${coffee.description}</p>
+                    </div>
+                    <div class="profile-body">
+                        <div class="flavor-chart">
+                            <div class="flavor-bar">
+                                <span class="flavor-label">Acidity</span>
+                                <div class="flavor-bar-container">
+                                    <div class="flavor-bar-fill" style="width: ${coffee.acidity * 10}%"></div>
+                                </div>
+                                <span class="flavor-value">${coffee.acidity}/10</span>
+                            </div>
+                            <div class="flavor-bar">
+                                <span class="flavor-label">Body</span>
+                                <div class="flavor-bar-container">
+                                    <div class="flavor-bar-fill" style="width: ${coffee.body * 10}%"></div>
+                                </div>
+                                <span class="flavor-value">${coffee.body}/10</span>
+                            </div>
+                            <div class="flavor-bar">
+                                <span class="flavor-label">Sweetness</span>
+                                <div class="flavor-bar-container">
+                                    <div class="flavor-bar-fill" style="width: ${coffee.sweetness * 10}%"></div>
+                                </div>
+                                <span class="flavor-value">${coffee.sweetness}/10</span>
+                            </div>
+                            <div class="flavor-bar">
+                                <span class="flavor-label">Bitterness</span>
+                                <div class="flavor-bar-container">
+                                    <div class="flavor-bar-fill" style="width: ${coffee.bitterness * 10}%"></div>
+                                </div>
+                                <span class="flavor-value">${coffee.bitterness}/10</span>
+                            </div>
+                            <div class="flavor-bar">
+                                <span class="flavor-label">Aroma</span>
+                                <div class="flavor-bar-container">
+                                    <div class="flavor-bar-fill" style="width: ${coffee.aroma * 10}%"></div>
+                                </div>
+                                <span class="flavor-value">${coffee.aroma}/10</span>
+                            </div>
+                        </div>
+                        <div class="tasting-notes">
+                            <strong>Tasting Notes:</strong>
+                            ${coffee.notes.map(note => `<span class="note-tag">${note}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            setTimeout(() => {
+                profiles.querySelectorAll('.profile-card').forEach(card => {
+                    card.classList.add('loaded');
+                });
+            }, 200);
+        }
+
+        function loadCuppingForm() {
+            const form = document.getElementById('cuppingForm');
+            const attributes = [
+                { name: 'acidity', label: 'Acidity' },
+                { name: 'body', label: 'Body' },
+                { name: 'sweetness', label: 'Sweetness' },
+                { name: 'bitterness', label: 'Bitterness' },
+                { name: 'aroma', label: 'Aroma' },
+                { name: 'aftertaste', label: 'Aftertaste' }
+            ];
+            
+            form.innerHTML = `
+                <h2 style="text-align: center; color: #8B4513; margin-bottom: 2rem;">Interactive Cupping Form</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 2rem;">Rate your coffee tasting experience. Adjust the sliders to record your observations.</p>
+                ${attributes.map(attr => `
+                    <div class="form-group">
+                        <label>${attr.label}</label>
+                        <div class="slider-container">
+                            <input type="range" min="0" max="10" value="5" class="slider" id="${attr.name}" oninput="updateSliderValue('${attr.name}', this.value)">
+                            <div class="slider-value" id="${attr.name}-value">5/10</div>
+                        </div>
+                    </div>
+                `).join('')}
+                <div class="form-group">
+                    <label>Tasting Notes</label>
+                    <textarea id="tastingNotes" rows="4" style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-family: inherit;" placeholder="Describe the flavors, aromas, and characteristics you notice..."></textarea>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;" onclick="analyzeTasting()">Analyze My Tasting</button>
+                <div class="results-display" id="resultsDisplay"></div>
+            `;
+        }
+
+        function updateSliderValue(name, value) {
+            document.getElementById(`${name}-value`).textContent = `${value}/10`;
+        }
+
+        function analyzeTasting() {
+            const attributes = ['acidity', 'body', 'sweetness', 'bitterness', 'aroma', 'aftertaste'];
+            const scores = {};
+            
+            attributes.forEach(attr => {
+                scores[attr] = parseInt(document.getElementById(attr).value);
+            });
+            
+            const notes = document.getElementById('tastingNotes').value;
+            const avgScore = Object.values(scores).reduce((a, b) => a + b, 0) / attributes.length;
+            
+            // Find matching coffee profile
+            let bestMatch = null;
+            let bestScore = 0;
+            
+            coffeeProfiles.forEach(coffee => {
+                const matchScore = 
+                    Math.abs(coffee.acidity - scores.acidity) +
+                    Math.abs(coffee.body - scores.body) +
+                    Math.abs(coffee.sweetness - scores.sweetness) +
+                    Math.abs(coffee.bitterness - scores.bitterness) +
+                    Math.abs(coffee.aroma - scores.aroma);
+                
+                if (!bestMatch || matchScore < bestScore) {
+                    bestMatch = coffee;
+                    bestScore = matchScore;
+                }
+            });
+            
+            const results = document.getElementById('resultsDisplay');
+            results.innerHTML = `
+                <h3 style="color: #8B4513; margin-bottom: 1rem;">Your Tasting Analysis</h3>
+                <p><strong>Overall Score:</strong> ${avgScore.toFixed(1)}/10</p>
+                <p><strong>Best Match:</strong> ${bestMatch.name}</p>
+                <p style="margin-top: 1rem;"><strong>Your Notes:</strong></p>
+                <p style="background: white; padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">${notes || 'No notes recorded'}</p>
+                <p style="margin-top: 1rem;">Based on your ratings, you might enjoy coffees with similar profiles to ${bestMatch.name}. Try exploring our collection to find your perfect match!</p>
+            `;
+            results.classList.add('active');
+        }
+
+        // Load cupping form after profiles
+        setTimeout(() => {
+            loadCuppingForm();
+        }, 500);
+    </script>
+</body>
+</html>
+
